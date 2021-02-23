@@ -33,12 +33,12 @@ public class ProductController {
 
     @PostMapping("/product")
     @ResponseStatus(HttpStatus.CREATED)
-    public Product product(@RequestBody Product product) {
+    public Product createProduct(@RequestBody Product product) {
         return repo.save(product);
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteStudent(@PathVariable(value = "id") int id) {
+    public void deleteProduct(@PathVariable(value = "id") int id) {
         repo.deleteById(id);
     }
 
